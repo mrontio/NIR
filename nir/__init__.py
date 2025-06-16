@@ -5,6 +5,7 @@ Documentation: https://nnir.readthedocs.io
 
 from importlib.metadata import version as metadata_version, PackageNotFoundError
 
+print("example commit")
 try:
     __version__ = version = metadata_version("nir")
     del metadata_version
