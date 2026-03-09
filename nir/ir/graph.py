@@ -203,9 +203,7 @@ class NIRGraph(NIRNode):
         for edge in self.edges:
             edge_tuple = (edge[0], edge[1])
             if edge_tuple in edge_set:
-                raise ValueError(
-                    f"Duplicate edge: ({edge[0]!r}, {edge[1]!r})"
-                )
+                raise ValueError(f"Duplicate edge: ({edge[0]!r}, {edge[1]!r})")
             edge_set.add(edge_tuple)
 
         for name, node in self.nodes.items():
@@ -213,9 +211,7 @@ class NIRGraph(NIRNode):
                 try:
                     node.validate_structure()
                 except ValueError as e:
-                    raise ValueError(
-                        f"In subgraph {name!r}: {e}"
-                    ) from e
+                    raise ValueError(f"In subgraph {name!r}: {e}") from e
 
     def check_types(self):
         """Check that all nodes in the graph have input and output types.
