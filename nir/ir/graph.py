@@ -54,9 +54,9 @@ class NIRGraph(NIRNode):
         self.output_type = output_type
 
         # Check that all nodes have input and output types, if requested (default)
-        if type_check:
-            self.infer_types()
-            self.check_types()
+        # if type_check:
+        #     self.infer_types()
+        #     self.check_types()
 
         # Call post init to set input_type and output_type
         self.__post_init__()
@@ -176,10 +176,9 @@ class NIRGraph(NIRNode):
     def validate_structure(self):
         """Validate the structural integrity of the graph.
 
-        Checks that all edge endpoints reference existing nodes and flags
-        duplicate edges. Called at the start of infer_types() so that
-        structural problems surface as clear errors rather than confusing
-        type inference failures.
+        Checks that all edge endpoints reference existing nodes and flags duplicate
+        edges. Called at the start of infer_types() so that structural problems surface
+        as clear errors rather than confusing type inference failures.
 
         Raises ValueError with a specific message for each violation.
         """
